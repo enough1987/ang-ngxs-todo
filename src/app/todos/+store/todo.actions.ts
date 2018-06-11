@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-import {Todo} from '../todos.model';
-import {FEATURE_NAME} from './todo.dictionary';
+import { FEATURE_NAME, Todo } from './todo.dictionary';
 
 export class TodoActions {
   static readonly ADD_TODO = FEATURE_NAME + 'Add';

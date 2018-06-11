@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {Todo} from '../../todos.model';
-import {select, Store} from '@ngrx/store';
-import {AppState} from '../../../+store/app.state';
-import {RemoveTodo} from '../../+store/todo.actions';
-import {getTodoState} from '../../+store/todo.reducer';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { AppState } from '../../../+store/app.state';
+import { RemoveTodo } from '../../+store/todo.actions';
+import { getTodoState } from '../../+store/todo.reducer';
+import { Todo } from '../../+store/todo.dictionary';
 
 @Component({
   selector: 'app-todo',

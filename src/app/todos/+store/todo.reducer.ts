@@ -1,14 +1,6 @@
-import {Todo} from '../todos.model';
-import {TodoActionsTypes, TodoActions} from './todo.actions';
-import {createFeatureSelector} from '@ngrx/store';
-import {TODO_STORE_NAME} from './todo.dictionary';
-
-const initialState: Todo[] = [
-  {
-    name: 'initial',
-    action: 'nothing'
-  }
-];
+import { TodoActionsTypes, TodoActions } from './todo.actions';
+import { createFeatureSelector } from '@ngrx/store';
+import { initialState, Todo, TODO_STORE_NAME } from './todo.dictionary';
 
 export function todoReducer(state: Todo[] = initialState, action: TodoActionsTypes) {
 

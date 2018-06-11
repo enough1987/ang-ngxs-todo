@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {StoreModule} from '@ngrx/store';
 import {TodosModule} from './todos/todos.module';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app.router';
 
 const COMPONENTS = [
   AppComponent
@@ -15,8 +17,10 @@ const COMPONENTS = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot({}),
-    TodosModule
+    TodosModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
