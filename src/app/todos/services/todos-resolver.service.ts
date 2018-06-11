@@ -14,7 +14,6 @@ export class TodosResolverService implements Resolve<void> {
               private store: Store<AppState>) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): void {
-    console.log(' - TEST - ');
     this.http.get<Todo[]>(GET_TODOS_URL).subscribe(todos => {
       console.log(todos);
       this.store.dispatch(new SetupTodo(todos));

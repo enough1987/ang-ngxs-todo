@@ -16,7 +16,6 @@ export class TodoComponent {
   todos$: Observable<Todo[]>;
 
   constructor(private store: Store<AppState>) {
-    console.log(store);
     this.todos$ = store.pipe(select(getTodoState));
   }
 
