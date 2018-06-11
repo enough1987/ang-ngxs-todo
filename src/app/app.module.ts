@@ -3,14 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {StoreModule} from '@ngrx/store';
-import {todoReducer} from './todos/+store/todo.reducer';
-import { TodoComponent } from './todos/components/todo/todo.component';
-import { CreateTodoComponent } from './todos/components/create-todo/create-todo.component';
+import {TodosModule} from './todos/todos.module';
 
 const COMPONENTS = [
-  AppComponent,
-  TodoComponent,
-  CreateTodoComponent
+  AppComponent
 ];
 
 @NgModule({
@@ -19,9 +15,8 @@ const COMPONENTS = [
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({
-      todos: todoReducer
-    })
+    StoreModule.forRoot({}),
+    TodosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
