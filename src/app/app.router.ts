@@ -7,7 +7,9 @@ const ROUTES: Routes = [
   {
     path: '',
     component: TodosComponent,
-    resolve: { data: TodosResolverService }
+    resolve: {
+      data: TodosResolverService,
+    }
   }
 ];
 
@@ -19,7 +21,9 @@ const ROUTES: Routes = [
   ],
   providers: [
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+  ]
 })
 export class AppRoutingModule {
 }

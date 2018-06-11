@@ -7,12 +7,14 @@ import { todoReducer } from './+store/todo.reducer';
 import { TODO_STORE_NAME } from './+store/todo.dictionary';
 import { TodosComponent } from './todos.component';
 import {TodosResolverService} from './services/todos-resolver.service';
+import {EffectsModule} from '@ngrx/effects';
+import {TodoEffects} from './+store/todo.effects';
 
 
 const COMPONENTS = [
   TodosComponent,
   TodoComponent,
-  CreateTodoComponent
+  CreateTodoComponent,
 ];
 
 const SERVICES = [
@@ -23,15 +25,16 @@ const SERVICES = [
   imports: [
     CommonModule,
     StoreModule.forFeature(TODO_STORE_NAME, todoReducer),
+    EffectsModule.forFeature([TodoEffects])
   ],
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ],
   providers: [
-    ...SERVICES
+    ...SERVICES,
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ]
 })
 export class TodosModule { }

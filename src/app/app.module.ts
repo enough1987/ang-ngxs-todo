@@ -6,23 +6,27 @@ import {StoreModule} from '@ngrx/store';
 import {TodosModule} from './todos/todos.module';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app.router';
+import {EffectsModule} from '@ngrx/effects';
 
 const COMPONENTS = [
-  AppComponent
+  AppComponent,
 ];
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     TodosModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }
