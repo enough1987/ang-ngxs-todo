@@ -1,0 +1,12 @@
+<div>
+
+  <h3>Todos : </h3>
+  <ul>
+    <li *ngFor="let todo of todos$ | async; let i = index">
+      <p>{{ todo.name + ' - ' + todo.action }},
+        <button (click)="deleteTodo(i)" > delete </button>
+      </p>
+    </li>
+  </ul>
+
+</div>
