@@ -1,5 +1,5 @@
-import {Action, Selector, State, StateContext} from '@ngxs/store';
-import { AddTodo, RemoveTodo, SetupTodo } from './todos.actions';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import {AddTodo, RemoveTodo, SetupTodo, SideEffectTodo} from './todos.actions';
 import { TodosStateModel } from './todos.dictionary';
 
 ​
@@ -13,6 +13,11 @@ export class TodosState {
 
   @Selector() static getTodos(state: TodosStateModel) {
     return state.todos;
+  }
+
+  @Action(SideEffectTodo)
+  handleSideEffectTodo() {
+    console.log(' Side Effect Todo ');
   }
 
   @Action(SetupTodo)
