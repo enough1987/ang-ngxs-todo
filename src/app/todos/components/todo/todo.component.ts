@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { select, Store } from '@ngrx/store';
-import { AppState } from '../../../+store/app.state';
-import { RemoveTodo } from '../../+store/todo.actions';
-import { getTodoState } from '../../+store/todo.reducer';
-import { Todo } from '../../+store/todo.dictionary';
+import { RemoveTodo } from '../../+store/todos.actions';
+import { Todo } from '../../+store/todos.dictionary';
+import {Select, Store} from '@ngxs/store';
+
 
 @Component({
   selector: 'app-todo',
@@ -13,10 +12,9 @@ import { Todo } from '../../+store/todo.dictionary';
 })
 export class TodoComponent {
 
-  todos$: Observable<Todo[]>;
+  @Select(state => state.todos.todos) todos$: Observable<Todo[]>;
 
-  constructor(private store: Store<AppState>) {
-    this.todos$ = store.pipe(select(getTodoState));
+  constructor(private store: Store) {
   }
 
   deleteTodo(index: number) {

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AddTodo } from '../../+store/todo.actions';
-import { AppState } from '../../../+store/app.state';
+import { Component } from '@angular/core';
+import { AddTodo } from '../../+store/todos.actions';
+import {Store} from '@ngxs/store';
 
 @Component({
   selector: 'app-create-todo',
@@ -10,7 +9,7 @@ import { AppState } from '../../../+store/app.state';
 })
 export class CreateTodoComponent {
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store) {
   }
 
   public addTodo(name: string, action: string) {

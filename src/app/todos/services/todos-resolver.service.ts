@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { Resolve, RouterStateSnapshot,
   ActivatedRouteSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { GET_TODOS_URL, Todo } from '../+store/todo.dictionary';
-import { AppState } from '../../+store/app.state';
-import { Store } from '@ngrx/store';
-import {SetupTodo, SideEffectTodo} from '../+store/todo.actions';
+import { GET_TODOS_URL, Todo } from '../+store/todos.dictionary';
+import {SetupTodo, SideEffectTodo} from '../+store/todos.actions';
+import {Store} from '@ngxs/store';
 
 
 @Injectable()
 export class TodosResolverService implements Resolve<void> {
   constructor(private http: HttpClient,
-              private store: Store<AppState>) {}
+              private store: Store) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): void {
     this.http.get<Todo[]>(GET_TODOS_URL).subscribe(todos => {

@@ -7,5 +7,6 @@ export interface Todo {
   action: string;
 }
 
-export const initialState: Todo[] = [
-];
+export interface TodosStateModel {
+  todos: Todo[];
+}
