@@ -1,6 +1,7 @@
-import {Action, State, StateContext} from '@ngxs/store';
-import {TodosStateModel} from './todos.dictionary';
-import {AddTodo, RemoveTodo, SetupTodo} from './todos.actions';
+import {Action, Selector, State, StateContext} from '@ngxs/store';
+import { AddTodo, RemoveTodo, SetupTodo } from './todos.actions';
+import { TodosStateModel } from './todos.dictionary';
+
 ​
 @State<TodosStateModel>({
   name: 'todos',
@@ -9,6 +10,10 @@ import {AddTodo, RemoveTodo, SetupTodo} from './todos.actions';
   },
 })
 export class TodosState {
+
+  @Selector() static getTodos(state: TodosStateModel) {
+    return state.todos;
+  }
 
   @Action(SetupTodo)
   setupTodos(ctx: StateContext<TodosStateModel>, action: SetupTodo) {

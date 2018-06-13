@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RemoveTodo } from '../../+store/todos.actions';
 import { Todo } from '../../+store/todos.dictionary';
-import {Select, Store} from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
+import {TodosState} from '../../+store/todos.state';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {Select, Store} from '@ngxs/store';
 })
 export class TodoComponent {
 
-  @Select(state => state.todos.todos) todos$: Observable<Todo[]>;
+  @Select(TodosState.getTodos) todos$: Observable<Todo[]>;
 
   constructor(private store: Store) {
   }

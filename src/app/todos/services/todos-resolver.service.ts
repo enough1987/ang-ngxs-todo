@@ -3,8 +3,8 @@ import { Resolve, RouterStateSnapshot,
   ActivatedRouteSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { GET_TODOS_URL, Todo } from '../+store/todos.dictionary';
-import {SetupTodo, SideEffectTodo} from '../+store/todos.actions';
-import {Store} from '@ngxs/store';
+import { SetupTodo, SideEffectTodo } from '../+store/todos.actions';
+import { Store } from '@ngxs/store';
 
 
 @Injectable()
